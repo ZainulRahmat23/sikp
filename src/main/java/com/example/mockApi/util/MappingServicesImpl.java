@@ -1,6 +1,8 @@
 package com.example.mockApi.util;
 
+import com.example.mockApi.domain.dto.RequestSendCalonDebiturDto;
 import com.example.mockApi.domain.dto.RequestSendDataAkadDto;
+import com.example.mockApi.domain.dto.ResponseSendCalonDebiturDto;
 import com.example.mockApi.domain.dto.ResponseSendDataAkadDto;
 import com.example.mockApi.service.MappingServices;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,6 +19,16 @@ public class MappingServicesImpl implements MappingServices {
         response.setError(false);
         response.setMessage("Data berhasil ditambahkan.");
         response.setCountAkad(1);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Object> getDebitur(HttpServletRequest request, RequestSendCalonDebiturDto dto) {
+        ResponseSendCalonDebiturDto response = new ResponseSendCalonDebiturDto();
+        response.setCode("00");
+        response.setError(false);
+        response.setMessage("Data berhasil ditambahkan.");
+        response.setNama("FIFI YULIANA");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

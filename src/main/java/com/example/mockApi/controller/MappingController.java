@@ -1,5 +1,6 @@
 package com.example.mockApi.controller;
 
+import com.example.mockApi.domain.dto.RequestSendCalonDebiturDto;
 import com.example.mockApi.domain.dto.RequestSendDataAkadDto;
 import com.example.mockApi.service.MappingServices;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,5 +20,10 @@ public class MappingController {
     @GetMapping("/sendDataAkad")
     public ResponseEntity<Object>getDukcapil(HttpServletRequest request, @RequestBody RequestSendDataAkadDto dto){
         return services.getDukcapil(request,dto);
+    }
+
+    @GetMapping("/sendCalonDebitur")
+    public ResponseEntity<Object>getDukcapil(HttpServletRequest request, @RequestBody RequestSendCalonDebiturDto dto){
+        return services.getDebitur(request,dto);
     }
 }
